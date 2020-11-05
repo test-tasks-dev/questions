@@ -19,7 +19,7 @@ const requestFetching = (fetching) => ({
 export const addQuestion = (question) => (dispatch) => {
   dispatch(requestFetching(true));
 
-  fetch('http://questions/', {
+  fetch('http://n74733u0.beget.tech/add-question.php', {
     method: 'POST',
     mode: 'no-cors',
     headers: {
@@ -31,7 +31,7 @@ export const addQuestion = (question) => (dispatch) => {
       dispatch(requestFetching(false));
     })
     .then(() => {
-      fetch('http://questions/questions.php')
+      fetch('http://n74733u0.beget.tech/fetch-questions.php')
         .then(response => response.json())
         .then((data) => {
           dispatch(fillQuestions(data.flat()));

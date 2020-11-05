@@ -2,18 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { PaginatedList } from 'react-paginated-list';
 import {
   Typography,
-  Button,
-  List,
-  ListItem,
-  ListItemText,
-  Divider
+  Button
 } from '@material-ui/core';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { FormDialog } from '../form-dialog';
 import { Spinner } from '../spinner';
 import { useStyles } from './styles';
-import { clearAnswers, fillQuestions, fetchQuestions as fetchAll } from '../../redux/actions/actions';
+import { clearAnswers, fillQuestions, fetchQuestions as fetchAll } from '../../redux/actions';
 
 const App = () => {
   const styles = useStyles();
@@ -22,7 +18,7 @@ const App = () => {
   const { questions, fetchQuestions } = useSelector(state => state);
 
   useEffect(() => {
-    fetch('http://questions/questions.php')
+    fetch('http://n74733u0.beget.tech/fetch-questions.php')
       .then(response => response.json())
       .then((data) => {
         dispatch(fillQuestions(data.flat()));
@@ -43,8 +39,8 @@ const App = () => {
         <>
           {list.map((item, index) => {
             return (
-              <div key={index}>
-                {`${index}. ${item}`}
+              <div className={styles.listItem} key={index}>
+                {`${index + 1}. ${item}`}
               </div>
             );
           })}

@@ -6,7 +6,7 @@ import {
   REQUEST_FETCHING,
   FILL_QUESTIONS,
   FETCH_QUESTIONS
-} from './actions/actions';
+} from './actions';
 
 const initialState = {
   question: '',

@@ -13,7 +13,7 @@ import { Formik } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { useStyles } from './styles';
-import { addQuestion, addAnswers, removeAnswer as remove } from '../../redux/actions/actions';
+import { addQuestion, addAnswers, removeAnswer as remove } from '../../redux/actions';
 
 export const Form = () => {
   const styles = useStyles();
