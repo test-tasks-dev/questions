@@ -2,4 +2,4 @@
 
 #### backend-код лежит в директории ```src/backend/```
 
-[Демонстрация](https://test-tasks-dev.github.io/questions/)
+[Демонстрация](http://n74733u0.beget.tech/)
